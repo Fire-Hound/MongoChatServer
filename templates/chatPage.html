@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="{{url_for('static', filename='pageLoad.js')}}">
+    </script>
+</head>
+<body>
+    {%for chat in chats%}
+     {{chat.user}}: {{chat.text}} <br>
+    {%endfor%}
+    <form method="POST">
+        <input type="text" name="text" placeholder="Enter text"/>
+        <input type="submit" value="send"/>
+    </form>
+    
+
+</body>
+</html>
