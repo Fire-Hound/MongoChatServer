@@ -7,6 +7,14 @@
     <title>Document</title>
     <script type="text/javascript" src="{{url_for('static', filename='pageLoad.js')}}">
     </script>
+    <script>
+        function refresh(){
+        if (window.history.replaceState) {
+            window.history.replaceState( null, null, window.location.href );
+            document.location.reload(true)
+        }
+        }
+    </script>
 </head>
 <body>
     {%for chat in chats%}
@@ -15,8 +23,8 @@
     <form method="POST">
         <input type="text" name="text" placeholder="Enter text"/>
         <input type="submit" value="send"/>
+        <input type="button" value="refresh" onclick="refresh()"/>
     </form>
-    
 
 </body>
 </html>
