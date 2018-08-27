@@ -26,5 +26,5 @@ def getChatPage():
         collection.insert_one({"user":user, "text":text})
     chats = list(collection.find())
     return flask.render_template("chatPage.html", chats=chats)
-app.run('0.0.0.0', port=40010)
-client.close()
+# app.run('0.0.0.0', port=40010)
+# client.close()
